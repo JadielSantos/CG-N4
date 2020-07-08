@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6h9gGLu1FPxnwIsqxo7NG5O5DSc5R+HTbR51pn/JK5G0+Fg12TAjn829NjhrZk/aQdYyvq+XtexO+mho/UPPoA==",
+  "dgSpecHash": "zthHjHHOeS3JnJkznWpj1hdqx+MADlgXWeScBb8EQGsOW8yz1/ipDdMP9/KSnKEyzcZ43VLF2H/RAP3hdrPK9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jadiel Santos\\source\\repos\\dalton-reis\\gcg-cg\\CG-N4\\CG-N4.csproj",
+  "projectFilePath": "C:\\Users\\Jadiel Santos\\Desktop\\FURB\\CG-N4\\CG-N4.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jadiel Santos\\source\\repos\\dalton-reis\\gcg-cg\\CG-N4\\CG-N4.csproj": {}
+    "C:\\Users\\Jadiel Santos\\Desktop\\FURB\\CG-N4\\CG-N4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jadiel Santos\\source\\repos\\dalton-reis\\gcg-cg\\CG-N4\\CG-N4.csproj": {
+    "C:\\Users\\Jadiel Santos\\Desktop\\FURB\\CG-N4\\CG-N4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jadiel Santos\\source\\repos\\dalton-reis\\gcg-cg\\CG-N4\\CG-N4.csproj",
+        "projectUniqueName": "C:\\Users\\Jadiel Santos\\Desktop\\FURB\\CG-N4\\CG-N4.csproj",
         "projectName": "CG-N4",
-        "projectPath": "C:\\Users\\Jadiel Santos\\source\\repos\\dalton-reis\\gcg-cg\\CG-N4\\CG-N4.csproj",
+        "projectPath": "C:\\Users\\Jadiel Santos\\Desktop\\FURB\\CG-N4\\CG-N4.csproj",
         "packagesPath": "C:\\Users\\Jadiel Santos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jadiel Santos\\source\\repos\\dalton-reis\\gcg-cg\\CG-N4\\obj\\",
+        "outputPath": "C:\\Users\\Jadiel Santos\\Desktop\\FURB\\CG-N4\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
