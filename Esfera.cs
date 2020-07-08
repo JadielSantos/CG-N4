@@ -63,7 +63,7 @@ namespace gcgcg
       //   GL.Vertex3(base.pontosLista[index].X, base.pontosLista[index].Y, base.pontosLista[index].Z);
       // GL.End();
 
-      drawSphere(1,10,10);
+      drawSphere(30, 1000, 1000);
     }
 
     void drawSphere(double r, int lats, int longs)

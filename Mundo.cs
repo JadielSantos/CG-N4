@@ -69,11 +69,10 @@ namespace gcgcg
       objetosLista.Add(Mesa);
       Mesa.EscalaXYZBBox(300, 20, 600);
 
-      // Bola = new Esfera("Bola", null);
-      // objetosLista.Add(Bola);
-      // Bola.EscalaXYZ(30, 30, 30);
-      // Bola.TranslacaoXYZ(0, 30, 0);
-      // Bola.PrimitivaCor = OpenTK.Color.DarkRed;
+      Bola = new Esfera("Bola", null);
+      objetosLista.Add(Bola);
+      Bola.TranslacaoXYZ(0, 40, 0);
+      Bola.PrimitivaCor = OpenTK.Color.DarkRed;
 
       CanaletaEsquerda = new Cubo("Canaleta Esquerda", null);
       objetosLista.Add(CanaletaEsquerda);
