@@ -1,0 +1,9 @@
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\CG_Biblioteca\bin\Debug\netcoreapp3.1\CG_Biblioteca.deps.json
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\CG_Biblioteca\bin\Debug\netcoreapp3.1\CG_Biblioteca.dll
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\CG_Biblioteca\bin\Debug\netcoreapp3.1\CG_Biblioteca.pdb
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\CG_Biblioteca\obj\Debug\netcoreapp3.1\CG_Biblioteca.csprojAssemblyReference.cache
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\CG_Biblioteca\obj\Debug\netcoreapp3.1\CG_Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\CG_Biblioteca\obj\Debug\netcoreapp3.1\CG_Biblioteca.AssemblyInfoInputs.cache
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\CG_Biblioteca\obj\Debug\netcoreapp3.1\CG_Biblioteca.AssemblyInfo.cs
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\CG_Biblioteca\obj\Debug\netcoreapp3.1\CG_Biblioteca.dll
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\CG_Biblioteca\obj\Debug\netcoreapp3.1\CG_Biblioteca.pdb

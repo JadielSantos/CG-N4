@@ -1,0 +1,69 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Jadiel Santos\\source\\repos\\dalton-reis\\gcg-cg\\CG-N4\\CG_Biblioteca\\CG_Biblioteca.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Jadiel Santos\\source\\repos\\dalton-reis\\gcg-cg\\CG-N4\\CG_Biblioteca\\CG_Biblioteca.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jadiel Santos\\source\\repos\\dalton-reis\\gcg-cg\\CG-N4\\CG_Biblioteca\\CG_Biblioteca.csproj",
+        "projectName": "CG_Biblioteca",
+        "projectPath": "C:\\Users\\Jadiel Santos\\source\\repos\\dalton-reis\\gcg-cg\\CG-N4\\CG_Biblioteca\\CG_Biblioteca.csproj",
+        "packagesPath": "C:\\Users\\Jadiel Santos\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jadiel Santos\\source\\repos\\dalton-reis\\gcg-cg\\CG-N4\\CG_Biblioteca\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Jadiel Santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "OpenTK.NetCore": {
+              "target": "Package",
+              "version": "[*, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

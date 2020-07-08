@@ -1,0 +1,16 @@
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\bin\Debug\netcoreapp3.1\CG-N4.exe
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\bin\Debug\netcoreapp3.1\CG-N4.deps.json
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\bin\Debug\netcoreapp3.1\CG-N4.runtimeconfig.json
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\bin\Debug\netcoreapp3.1\CG-N4.runtimeconfig.dev.json
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\bin\Debug\netcoreapp3.1\CG-N4.dll
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\bin\Debug\netcoreapp3.1\CG-N4.pdb
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\bin\Debug\netcoreapp3.1\OpenTK.dll
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\bin\Debug\netcoreapp3.1\CG_Biblioteca.dll
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\bin\Debug\netcoreapp3.1\CG_Biblioteca.pdb
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.csprojAssemblyReference.cache
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.csproj.CoreCompileInputs.cache
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.AssemblyInfoInputs.cache
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.csproj.CopyComplete
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.dll
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.pdb
+C:\Users\Jadiel Santos\source\repos\dalton-reis\gcg-cg\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.genruntimeconfig.cache
