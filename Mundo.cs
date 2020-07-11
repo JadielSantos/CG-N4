@@ -132,7 +132,7 @@ namespace gcgcg
 
     private void MoveBall() {
       BallZ += 15 * soma;
-      Bola.TranslacaoXYZ(0, 0, BallZ);
+      Bola.TranslacaoXYZ(0, 0, 15 * soma);
     }
 
     protected override void OnUnload(EventArgs e)
@@ -156,7 +156,7 @@ namespace gcgcg
       base.OnUpdateFrame(e);
       Console.WriteLine("Ballz: " + BallZ);
 
-      if (BallZ < 120 && BallZ > -120)
+      if (BallZ < 570 && BallZ > -570)
         MoveBall();
       else {
         soma *= -1;

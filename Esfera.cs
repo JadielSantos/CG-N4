@@ -56,6 +56,25 @@ namespace gcgcg
       //   listaTopologia.Add(x + 1);
       //   listaTopologia.Add(segments);
       // }
+        GL.Enable(EnableCap.DepthTest);
+        GL.Enable(EnableCap.CullFace);
+
+        //TODO: o que faz está linha abaixo?
+        GL.Hint(HintTarget.PerspectiveCorrectionHint, HintMode.Nicest);
+        GL.GenTextures(1, out texture);
+        GL.BindTexture(TextureTarget.Texture2D, texture);
+        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
+        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Linear);
+
+        System.Drawing.Imaging.BitmapData data = bitmap.LockBits(new System.Drawing.Rectangle(0, 0, bitmap.Width, bitmap.Height),
+            System.Drawing.Imaging.ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+
+        GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, data.Width, data.Height, 0,
+            OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, data.Scan0);
+
+        bitmap.UnlockBits(data);
+
+
 
     }
 
@@ -82,27 +101,9 @@ namespace gcgcg
         double z1 = Math.Sin(lat1);
         double zr1 = Math.Cos(lat1);
 
-        GL.Enable(EnableCap.DepthTest);
-        GL.Enable(EnableCap.CullFace);
-
-        //TODO: o que faz está linha abaixo?
-        GL.Hint(HintTarget.PerspectiveCorrectionHint, HintMode.Nicest);
-        GL.GenTextures(1, out texture);
-        GL.BindTexture(TextureTarget.Texture2D, texture);
-        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
-        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Linear);
-
-        System.Drawing.Imaging.BitmapData data = bitmap.LockBits(new System.Drawing.Rectangle(0, 0, bitmap.Width, bitmap.Height),
-            System.Drawing.Imaging.ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-
-        GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, data.Width, data.Height, 0,
-            OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, data.Scan0);
-
-        bitmap.UnlockBits(data);
-
         GL.Enable(EnableCap.Texture2D);
         GL.BindTexture(TextureTarget.Texture2D, texture);
-
+        
         GL.Begin(PrimitiveType.TriangleFan);
         for (j = 0; j <= longs; j++)
         {
