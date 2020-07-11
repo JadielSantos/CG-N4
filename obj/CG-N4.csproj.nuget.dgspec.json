@@ -41,6 +41,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Bitmap.Net": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[4.5.3.3, )"
+            },
             "OpenTK.NetCore": {
               "target": "Package",
               "version": "[*, )"

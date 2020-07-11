@@ -11,7 +11,7 @@ using OpenTK.Graphics.OpenGL;
 using System.Collections.Generic;
 using OpenTK.Input;
 using CG_Biblioteca;
-
+using Timer = System.Timers.Timer;
 
 //TODO: arrumar o id dos objetos usando char letra = 'A'; letra++;
 //TODO: ter mais objetos geométricos: esfera
@@ -48,6 +48,8 @@ namespace gcgcg
     private Poligono objetoNovo = null;
     private String objetoId = "A";
     private Retangulo obj_Retangulo;
+    private int BallZ = 0;
+    private int soma = 1;
 #if CG_Privado
     //private Privado_SegReta obj_SegReta;
     //private Privado_Circulo obj_Circulo;
@@ -58,9 +60,31 @@ namespace gcgcg
     private Paddle PaddleFrente;
     private Paddle PaddleFundo;
     private Esfera Bola;
+    private int texture;
+    private OpenTK.Color cor = OpenTK.Color.White;
+
     protected override void OnLoad(EventArgs e)
     {
       base.OnLoad(e);
+
+      // Enable Light 0 and set its parameters.
+      GL.Light(LightName.Light0, LightParameter.Position, new float[] { 0.0f, 2.0f, 0.0f });
+      GL.Light(LightName.Light0, LightParameter.Ambient, new float[] { 0.3f, 0.3f, 0.3f, 1.0f });
+      GL.Light(LightName.Light0, LightParameter.Diffuse, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
+      GL.Light(LightName.Light0, LightParameter.Specular, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
+      GL.Light(LightName.Light0, LightParameter.SpotExponent, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
+      GL.LightModel(LightModelParameter.LightModelAmbient, new float[] { 0.2f, 0.2f, 0.2f, 1.0f });
+      GL.LightModel(LightModelParameter.LightModelTwoSide, 1);
+      GL.LightModel(LightModelParameter.LightModelLocalViewer, 1);
+
+      // Use GL.Material to set your object's material parameters.
+      GL.Material(MaterialFace.Front, MaterialParameter.Ambient, new float[] { 0.3f, 0.3f, 0.3f, 1.0f });
+      GL.Material(MaterialFace.Front, MaterialParameter.Diffuse, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
+      GL.Material(MaterialFace.Front, MaterialParameter.Specular, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
+      GL.Material(MaterialFace.Front, MaterialParameter.Emission, new float[] { 0.0f, 0.0f, 0.0f, 1.0f });
+
+      //FIXME: cor só aparece nas superfícies laterais. Ter mais tipos de luz.      
+      GL.Material(MaterialFace.Front, MaterialParameter.ColorIndexes, cor);
 
       Console.WriteLine(" --- Ajuda / Teclas: ");
       Console.WriteLine(" [  H     ] mostra teclas usadas. ");
@@ -72,7 +96,6 @@ namespace gcgcg
       Bola = new Esfera("Bola", null);
       objetosLista.Add(Bola);
       Bola.TranslacaoXYZ(0, 40, 0);
-      Bola.PrimitivaCor = OpenTK.Color.DarkRed;
 
       CanaletaEsquerda = new Cubo("Canaleta Esquerda", null);
       objetosLista.Add(CanaletaEsquerda);
@@ -106,6 +129,17 @@ namespace gcgcg
       //GL.Enable(EnableCap.CullFace);
       //GL.Disable(EnableCap.CullFace);
     }
+
+    private void MoveBall() {
+      BallZ += 15 * soma;
+      Bola.TranslacaoXYZ(0, 0, BallZ);
+    }
+
+    protected override void OnUnload(EventArgs e)
+    {
+      GL.DeleteTextures(1, ref texture);
+    }
+
     protected override void OnResize(EventArgs e)
     {
       base.OnResize(e);
@@ -120,6 +154,14 @@ namespace gcgcg
     protected override void OnUpdateFrame(FrameEventArgs e)
     {
       base.OnUpdateFrame(e);
+      Console.WriteLine("Ballz: " + BallZ);
+
+      if (BallZ < 120 && BallZ > -120)
+        MoveBall();
+      else {
+        soma *= -1;
+        MoveBall();
+      }
     }
     protected override void OnRenderFrame(FrameEventArgs e)
     {
@@ -129,7 +171,7 @@ namespace gcgcg
       GL.MatrixMode(MatrixMode.Modelview);
       GL.LoadMatrix(ref modelview);
 #if CG_Gizmo      
-      Sru3D();
+      //Sru3D();
 #endif
       for (var i = 0; i < objetosLista.Count; i++)
         objetosLista[i].Desenhar();
@@ -163,18 +205,18 @@ namespace gcgcg
           objetoNovo = null;
         }
       }
-      else if (e.Key == Key.Space)
-      {
-        if (objetoNovo == null)
-        {
-          objetoNovo = new Poligono(objetoId + 1, null);
-          objetosLista.Add(objetoNovo);
-          objetoNovo.PontosAdicionar(new Ponto4D(mouseX, mouseY));
-          objetoNovo.PontosAdicionar(new Ponto4D(mouseX, mouseY));  // N3-Exe6: "troque" para deixar o rastro
-        }
-        else
-          objetoNovo.PontosAdicionar(new Ponto4D(mouseX, mouseY));
-      }
+      // else if (e.Key == Key.Space)
+      // {
+      //   if (objetoNovo == null)
+      //   {
+      //     objetoNovo = new Poligono(objetoId + 1, null);
+      //     objetosLista.Add(objetoNovo);
+      //     objetoNovo.PontosAdicionar(new Ponto4D(mouseX, mouseY));
+      //     objetoNovo.PontosAdicionar(new Ponto4D(mouseX, mouseY));  // N3-Exe6: "troque" para deixar o rastro
+      //   }
+      //   else
+      //     objetoNovo.PontosAdicionar(new Ponto4D(mouseX, mouseY));
+      // }
       else if (objetoSelecionado != null)
       {
         if (e.Key == Key.M)

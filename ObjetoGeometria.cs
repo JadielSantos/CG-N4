@@ -49,6 +49,14 @@ namespace gcgcg
       pontosLista[posicao] = pto;
     }
 
+    public float Left() {
+      return (float) pontosLista[pontosLista.Count - 1].X;
+    }
+
+    public float Right() {
+      return (float) pontosLista[pontosLista.Count - 2].X;
+    }
+
     public override string ToString()
     {
       string retorno;

@@ -16,43 +16,46 @@ namespace gcgcg
   {
     //TODO: gerar os vetores normais, tem como fazer no link deste exemplo
     private bool exibeVetorNormal = false;
+    private int texture;
+    private System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap("esfera.png");
+
     //TODO: não precisava ter parte negativa, ter um tipo inteiro grande
     protected List<int> listaTopologia = new List<int>();
 
     public Esfera(string rotulo, Objeto paiRef) : base(rotulo, paiRef)
     {
-      int segments = 10; // Números mais altos melhoram a qualidade 
-      int radius = 1;    // O raio (largura) do cilindro
-      int height = 10;   // A altura do cilindro
+      // int segments = 50; // Números mais altos melhoram a qualidade 
+      // int radius = 15;    // O raio (largura) do cilindro
+      // int height = 15;   // A altura do cilindro
 
-      for (double y = 0; y < 2; y++)
-      {
-        for (double x = 0; x < segments; x++)
-        {
-          double theta = (x / (segments - 1)) * 2 * Math.PI;
-          base.PontosAdicionar(new Ponto4D(
-              (float)(radius * Math.Cos(theta)),
-              (float)(height * y),
-              (float)(radius * Math.Sin(theta))));
-        }
-      }
-      // ponto do centro da base
-      base.PontosAdicionar(new Ponto4D(0, 0, 0));
-      // ponto do centro da topo
-      base.PontosAdicionar(new Ponto4D(0, height, 0));
+      // for (double y = 0; y < 2; y++)
+      // {
+      //   for (double x = 0; x < segments; x++)
+      //   {
+      //     double theta = (x / (segments - 1)) * 2 * Math.PI;
+      //     base.PontosAdicionar(new Ponto4D(
+      //         (float)(radius * Math.Cos(theta)),
+      //         (float)(height * y),
+      //         (float)(radius * Math.Sin(theta))));
+      //   }
+      // }
+      // // ponto do centro da base
+      // base.PontosAdicionar(new Ponto4D(0, 0, 0));
+      // // ponto do centro da topo
+      // base.PontosAdicionar(new Ponto4D(0, height, 0));
 
-      //TODO: parce que alguams faces estão com a orientação errada.
-      for (int x = 0; x < segments - 1; x++)
-      {
-        // base
-        listaTopologia.Add(x);
-        listaTopologia.Add(x + 1);
-        listaTopologia.Add(segments - 1);
-        // topo
-        listaTopologia.Add(x);
-        listaTopologia.Add(x + 1);
-        listaTopologia.Add(segments);
-      }
+      // //TODO: parce que alguams faces estão com a orientação errada.
+      // for (int x = 0; x < segments - 1; x++)
+      // {
+      //   // base
+      //   listaTopologia.Add(x);
+      //   listaTopologia.Add(x + 1);
+      //   listaTopologia.Add(segments - 1);
+      //   // topo
+      //   listaTopologia.Add(x);
+      //   listaTopologia.Add(x + 1);
+      //   listaTopologia.Add(segments);
+      // }
 
     }
 
@@ -63,7 +66,7 @@ namespace gcgcg
       //   GL.Vertex3(base.pontosLista[index].X, base.pontosLista[index].Y, base.pontosLista[index].Z);
       // GL.End();
 
-      drawSphere(30, 1000, 1000);
+      drawSphere(20, 100, 100);
     }
 
     void drawSphere(double r, int lats, int longs)
@@ -79,7 +82,28 @@ namespace gcgcg
         double z1 = Math.Sin(lat1);
         double zr1 = Math.Cos(lat1);
 
-        GL.Begin(PrimitiveType.Quads);
+        GL.Enable(EnableCap.DepthTest);
+        GL.Enable(EnableCap.CullFace);
+
+        //TODO: o que faz está linha abaixo?
+        GL.Hint(HintTarget.PerspectiveCorrectionHint, HintMode.Nicest);
+        GL.GenTextures(1, out texture);
+        GL.BindTexture(TextureTarget.Texture2D, texture);
+        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
+        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Linear);
+
+        System.Drawing.Imaging.BitmapData data = bitmap.LockBits(new System.Drawing.Rectangle(0, 0, bitmap.Width, bitmap.Height),
+            System.Drawing.Imaging.ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+
+        GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, data.Width, data.Height, 0,
+            OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, data.Scan0);
+
+        bitmap.UnlockBits(data);
+
+        GL.Enable(EnableCap.Texture2D);
+        GL.BindTexture(TextureTarget.Texture2D, texture);
+
+        GL.Begin(PrimitiveType.TriangleFan);
         for (j = 0; j <= longs; j++)
         {
           double lng = 2 * Math.PI * (double)(j - 1) / longs;
@@ -92,6 +116,7 @@ namespace gcgcg
           GL.Vertex3(r * x * zr1, r * y * zr1, r * z1);
         }
         GL.End();
+        GL.Disable(EnableCap.Texture2D);
       }
     }
 //TODO: melhorar para exibir não só a lsita de pontos (geometria), mas também a topologia ... poderia ser listado estilo OBJ da Wavefrom
