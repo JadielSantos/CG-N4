@@ -1,25 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LINCROS\\Documents\\ProjetosGit\\cg-2020-trabalho-final\\CG-N4\\CG-N4.csproj": {}
+    "C:\\Users\\Jadiel Santos\\Desktop\\FURB\\CG-N4\\CG-N4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LINCROS\\Documents\\ProjetosGit\\cg-2020-trabalho-final\\CG-N4\\CG-N4.csproj": {
+    "C:\\Users\\Jadiel Santos\\Desktop\\FURB\\CG-N4\\CG-N4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LINCROS\\Documents\\ProjetosGit\\cg-2020-trabalho-final\\CG-N4\\CG-N4.csproj",
+        "projectUniqueName": "C:\\Users\\Jadiel Santos\\Desktop\\FURB\\CG-N4\\CG-N4.csproj",
         "projectName": "CG-N4",
-        "projectPath": "C:\\Users\\LINCROS\\Documents\\ProjetosGit\\cg-2020-trabalho-final\\CG-N4\\CG-N4.csproj",
-        "packagesPath": "C:\\Users\\LINCROS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LINCROS\\Documents\\ProjetosGit\\cg-2020-trabalho-final\\CG-N4\\obj\\",
+        "projectPath": "C:\\Users\\Jadiel Santos\\Desktop\\FURB\\CG-N4\\CG-N4.csproj",
+        "packagesPath": "C:\\Users\\Jadiel Santos\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jadiel Santos\\Desktop\\FURB\\CG-N4\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\LINCROS\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Jadiel Santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

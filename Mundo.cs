@@ -48,20 +48,19 @@ namespace gcgcg
     private Poligono objetoNovo = null;
     private String objetoId = "A";
     private Retangulo obj_Retangulo;
-    private float BallZ = 0.0f;
-    private float BallX = 0.0f;
-    private float xSpeed = 3f;
-    private float zSpeed = 3f;
+    private float PaddleFrenteXLeft = -45;
+    private float PaddleFrenteXRight = 45;
+    private float PaddleFundoXLeft = -45;
+    private float PaddleFundoXRight = 45;
+    private float BallZ = 0;
+    private float BallX = 0;
+    private float xSpeed = 6;
+    private float zSpeed = 6;
     private int PaddleFrenteX = 0;
     private int PaddleFundoX = 0;
     private int somaBall = 1;
     private int somaPaddleFrente = 1;
     private int somaPaddleFundo = 1;
-    private double clipAreaXleft, clipAreaXRight, clipAreaZBottom, clipAreaZTop;
-#if CG_Privado
-    //private Privado_SegReta obj_SegReta;
-    //private Privado_Circulo obj_Circulo;
-#endif
     private Cubo Mesa;
     private Cubo CanaletaEsquerda;
     private Cubo CanaletaDireita;
@@ -69,8 +68,9 @@ namespace gcgcg
     private Paddle PaddleFundo;
     private Esfera Bola;
     private int texture;
+    private int pontoFundo = 0;
+    private int pontoFrente = 0;
     private OpenTK.Color cor = OpenTK.Color.White;
-
     protected override void OnLoad(EventArgs e)
     {
       base.OnLoad(e);
@@ -138,8 +138,8 @@ namespace gcgcg
 
     private void MoveBall() {
       
-      BallX += xSpeed * 2;
-      BallZ += zSpeed * 2;
+      BallX += xSpeed;
+      BallZ += zSpeed;
 
       int ballXMax = 240; 
       int ballXMin = -240; 
@@ -147,15 +147,33 @@ namespace gcgcg
       int ballZMax = 570; 
       int ballZMin = -570;
 
-      if (BallZ > ballZMax) 
+      // Console.WriteLine("BallX: " + BallX + " BallZ: " + BallZ + " |Paddle Frente Left: " + PaddleFrenteXLeft + " Paddle Frente Right: " + PaddleFrenteXRight + " |Paddle Fundo Left: " + PaddleFundoXLeft + " Paddle Fundo Right: " + PaddleFundoXRight + "|");
+
+      if (BallZ == ballZMax && ((BallX >= PaddleFrenteXLeft && BallX <= PaddleFrenteXRight) || (BallX >= PaddleFundoXLeft && BallX <= PaddleFundoXRight))) 
       {
-          BallZ = ballZMax;
-          zSpeed = -zSpeed;
+        BallZ = ballZMax;
+        zSpeed = -zSpeed;
       }
-      else if (BallZ < ballZMin)
+      else if (BallZ == ballZMin && ((BallX >= PaddleFrenteXLeft && BallX <= PaddleFrenteXRight) || (BallX >= PaddleFundoXLeft && BallX <= PaddleFundoXRight)))
       {
         BallZ = ballZMin;
         zSpeed = -zSpeed;
+      }
+      else if (BallZ > ballZMax)
+      {
+        GameReset();
+        pontoFundo++;
+        Console.WriteLine("Frente: " + pontoFrente);
+        Console.WriteLine("Fundo: " + pontoFundo);
+        Console.WriteLine("*****************************");
+      }
+      else if (BallZ < ballZMin)
+      {
+        GameReset();
+        pontoFrente++;
+        Console.WriteLine("Frente: " + pontoFrente);
+        Console.WriteLine("Fundo: " + pontoFundo);
+        Console.WriteLine("*****************************");
       }
 
       if (BallX > ballXMax) 
@@ -169,19 +187,27 @@ namespace gcgcg
         xSpeed = -xSpeed;
       }
 
-      Console.WriteLine("X: " + BallX);
-      Console.WriteLine("Z: " + BallZ);
-      Bola.TranslacaoXYZ(xSpeed * 2, 0, zSpeed * 2);
+      Bola.TranslacaoXYZ(xSpeed, 0, zSpeed);
+    }
 
+    private void GameReset() {
+      Bola.TranslacaoXYZ(-BallX, 0, -BallZ);
+      BallX = 0;
+      BallZ = 0;
+      zSpeed = -zSpeed;
     }
 
     private void MovePaddleFrente() {
       PaddleFrenteX += somaPaddleFrente;
+      PaddleFrenteXLeft += somaPaddleFrente;
+      PaddleFrenteXRight += somaPaddleFrente;
       PaddleFrente.TranslacaoXYZ(somaPaddleFrente, 0, 0);
     }
 
     private void MovePaddleFundo() {
       PaddleFundoX += somaPaddleFundo;
+      PaddleFundoXLeft += somaPaddleFundo;
+      PaddleFundoXRight += somaPaddleFundo;
       PaddleFundo.TranslacaoXYZ(somaPaddleFundo, 0, 0);
     }
 
