@@ -73,11 +73,7 @@ namespace gcgcg
             OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, data.Scan0);
 
         bitmap.UnlockBits(data);
-
-
-
     }
-
     protected override void DesenharObjeto()
     {
       // GL.Begin(PrimitiveType.Triangles);

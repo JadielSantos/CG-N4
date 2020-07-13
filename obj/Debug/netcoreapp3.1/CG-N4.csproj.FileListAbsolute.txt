@@ -48,3 +48,37 @@ C:\Users\Jadiel Santos\Desktop\FURB\CG-N4\bin\Debug\netcoreapp3.1\runtimes\win\l
 C:\Users\Jadiel Santos\Desktop\FURB\CG-N4\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Jadiel Santos\Desktop\FURB\CG-N4\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Jadiel Santos\Desktop\FURB\CG-N4\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\CG-N4.exe
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\CG-N4.deps.json
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\CG-N4.runtimeconfig.json
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\CG-N4.runtimeconfig.dev.json
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\CG-N4.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\CG-N4.pdb
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\BitmapNet.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\EPPlus.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\OpenTK.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\CG_Biblioteca.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\bin\Debug\netcoreapp3.1\CG_Biblioteca.pdb
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.csprojAssemblyReference.cache
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.csproj.CoreCompileInputs.cache
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.AssemblyInfoInputs.cache
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.csproj.CopyComplete
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.dll
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.pdb
+C:\Users\LINCROS\Documents\ProjetosGit\cg-2020-trabalho-final\CG-N4\obj\Debug\netcoreapp3.1\CG-N4.genruntimeconfig.cache

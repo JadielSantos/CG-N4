@@ -48,12 +48,16 @@ namespace gcgcg
     private Poligono objetoNovo = null;
     private String objetoId = "A";
     private Retangulo obj_Retangulo;
-    private int BallZ = 0;
+    private float BallZ = 0.0f;
+    private float BallX = 0.0f;
+    private float xSpeed = 3f;
+    private float zSpeed = 3f;
     private int PaddleFrenteX = 0;
     private int PaddleFundoX = 0;
     private int somaBall = 1;
     private int somaPaddleFrente = 1;
     private int somaPaddleFundo = 1;
+    private double clipAreaXleft, clipAreaXRight, clipAreaZBottom, clipAreaZTop;
 #if CG_Privado
     //private Privado_SegReta obj_SegReta;
     //private Privado_Circulo obj_Circulo;
@@ -133,8 +137,42 @@ namespace gcgcg
     }
 
     private void MoveBall() {
-      BallZ += 15 * somaBall;
-      Bola.TranslacaoXYZ(0, 0, 15 * somaBall);
+      
+      BallX += xSpeed * 2;
+      BallZ += zSpeed * 2;
+
+      int ballXMax = 240; 
+      int ballXMin = -240; 
+
+      int ballZMax = 570; 
+      int ballZMin = -570;
+
+      if (BallZ > ballZMax) 
+      {
+          BallZ = ballZMax;
+          zSpeed = -zSpeed;
+      }
+      else if (BallZ < ballZMin)
+      {
+        BallZ = ballZMin;
+        zSpeed = -zSpeed;
+      }
+
+      if (BallX > ballXMax) 
+      {
+          BallX = ballXMax;
+          xSpeed = -xSpeed;
+      }
+      else if (BallX < ballXMin)
+      {
+        BallX = ballXMin;
+        xSpeed = -xSpeed;
+      }
+
+      Console.WriteLine("X: " + BallX);
+      Console.WriteLine("Z: " + BallZ);
+      Bola.TranslacaoXYZ(xSpeed * 2, 0, zSpeed * 2);
+
     }
 
     private void MovePaddleFrente() {
@@ -155,24 +193,20 @@ namespace gcgcg
     protected override void OnResize(EventArgs e)
     {
       base.OnResize(e);
-
+      GL.LoadIdentity();
       GL.Viewport(ClientRectangle.X, ClientRectangle.Y, ClientRectangle.Width, ClientRectangle.Height);
 
       Matrix4 projection = Matrix4.CreatePerspectiveFieldOfView(camera.Fovy, Width / (float)Height, camera.Near, camera.Far);
       GL.MatrixMode(MatrixMode.Projection);
       GL.LoadMatrix(ref projection);
+      GL.ClearColor(Color.CornflowerBlue);
     }
 
     protected override void OnUpdateFrame(FrameEventArgs e)
     {
       base.OnUpdateFrame(e);
 
-      if (BallZ < 570 && BallZ > -570)
-        MoveBall();
-      else {
-        somaBall *= -1;
-        MoveBall();
-      }
+      MoveBall();
 
       if (Keyboard[Key.Left]) {
         somaPaddleFrente = -10;
