@@ -1,5 +1,5 @@
 ﻿/**
-  Autor: Dalton Solano dos Reis
+  Autor: Jadiel dos Santos e Matheus Soares
 **/
 
 #define CG_Gizmo
