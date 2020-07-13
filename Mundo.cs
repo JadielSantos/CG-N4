@@ -76,26 +76,22 @@ namespace gcgcg
       base.OnLoad(e);
 
       // Enable Light 0 and set its parameters.
-      GL.Light(LightName.Light0, LightParameter.Position, new float[] { 0.0f, 2.0f, 0.0f });
-      GL.Light(LightName.Light0, LightParameter.Ambient, new float[] { 0.3f, 0.3f, 0.3f, 1.0f });
-      GL.Light(LightName.Light0, LightParameter.Diffuse, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
-      GL.Light(LightName.Light0, LightParameter.Specular, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
-      GL.Light(LightName.Light0, LightParameter.SpotExponent, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
-      GL.LightModel(LightModelParameter.LightModelAmbient, new float[] { 0.2f, 0.2f, 0.2f, 1.0f });
-      GL.LightModel(LightModelParameter.LightModelTwoSide, 1);
-      GL.LightModel(LightModelParameter.LightModelLocalViewer, 1);
+      // GL.Light(LightName.Light0, LightParameter.Position, new float[] { 0.0f, 2.0f, 0.0f });
+      // GL.Light(LightName.Light0, LightParameter.Ambient, new float[] { 0.3f, 0.3f, 0.3f, 1.0f });
+      // GL.Light(LightName.Light0, LightParameter.Diffuse, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
+      // GL.Light(LightName.Light0, LightParameter.Specular, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
+      // GL.Light(LightName.Light0, LightParameter.SpotExponent, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
+      // GL.LightModel(LightModelParameter.LightModelAmbient, new float[] { 0.2f, 0.2f, 0.2f, 1.0f });
+      // GL.LightModel(LightModelParameter.LightModelTwoSide, 1);
+      // GL.LightModel(LightModelParameter.LightModelLocalViewer, 1);
 
-      // Use GL.Material to set your object's material parameters.
-      GL.Material(MaterialFace.Front, MaterialParameter.Ambient, new float[] { 0.3f, 0.3f, 0.3f, 1.0f });
-      GL.Material(MaterialFace.Front, MaterialParameter.Diffuse, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
-      GL.Material(MaterialFace.Front, MaterialParameter.Specular, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
-      GL.Material(MaterialFace.Front, MaterialParameter.Emission, new float[] { 0.0f, 0.0f, 0.0f, 1.0f });
+      // // Use GL.Material to set your object's material parameters.
+      // GL.Material(MaterialFace.Front, MaterialParameter.Ambient, new float[] { 0.3f, 0.3f, 0.3f, 1.0f });
+      // GL.Material(MaterialFace.Front, MaterialParameter.Diffuse, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
+      // GL.Material(MaterialFace.Front, MaterialParameter.Specular, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
+      // GL.Material(MaterialFace.Front, MaterialParameter.Emission, new float[] { 0.0f, 0.0f, 0.0f, 1.0f });
 
-      //FIXME: cor só aparece nas superfícies laterais. Ter mais tipos de luz.      
-      GL.Material(MaterialFace.Front, MaterialParameter.ColorIndexes, cor);
-
-      Console.WriteLine(" --- Ajuda / Teclas: ");
-      Console.WriteLine(" [  H     ] mostra teclas usadas. ");
+      // GL.Material(MaterialFace.Front, MaterialParameter.ColorIndexes, cor);
 
       Mesa = new Cubo("Mesa", null);
       objetosLista.Add(Mesa);
@@ -149,33 +145,35 @@ namespace gcgcg
 
       // Console.WriteLine("BallX: " + BallX + " BallZ: " + BallZ + " |Paddle Frente Left: " + PaddleFrenteXLeft + " Paddle Frente Right: " + PaddleFrenteXRight + " |Paddle Fundo Left: " + PaddleFundoXLeft + " Paddle Fundo Right: " + PaddleFundoXRight + "|");
 
+      // Colisão Paddle Frente
       if (BallZ == ballZMax && ((BallX >= PaddleFrenteXLeft && BallX <= PaddleFrenteXRight) || (BallX >= PaddleFundoXLeft && BallX <= PaddleFundoXRight))) 
       {
         BallZ = ballZMax;
         zSpeed = -zSpeed;
       }
+
+      // Colisão Paddle Fundo
       else if (BallZ == ballZMin && ((BallX >= PaddleFrenteXLeft && BallX <= PaddleFrenteXRight) || (BallX >= PaddleFundoXLeft && BallX <= PaddleFundoXRight)))
       {
         BallZ = ballZMin;
         zSpeed = -zSpeed;
       }
+
+      // Paddle Frente Errou = Ponto Paddle Fundo
       else if (BallZ > ballZMax)
       {
-        GameReset();
         pontoFundo++;
-        Console.WriteLine("Frente: " + pontoFrente);
-        Console.WriteLine("Fundo: " + pontoFundo);
-        Console.WriteLine("*****************************");
-      }
-      else if (BallZ < ballZMin)
-      {
         GameReset();
-        pontoFrente++;
-        Console.WriteLine("Frente: " + pontoFrente);
-        Console.WriteLine("Fundo: " + pontoFundo);
-        Console.WriteLine("*****************************");
       }
 
+      // Paddle Fundo Errou = Ponto Paddle Frente
+      else if (BallZ < ballZMin)
+      {
+        pontoFrente++;
+        GameReset();
+      }
+
+      // Colisão canaletas
       if (BallX > ballXMax) 
       {
           BallX = ballXMax;
@@ -190,13 +188,18 @@ namespace gcgcg
       Bola.TranslacaoXYZ(xSpeed, 0, zSpeed);
     }
 
+    // Reseta o jogo ao pontuar alguem
     private void GameReset() {
       Bola.TranslacaoXYZ(-BallX, 0, -BallZ);
       BallX = 0;
       BallZ = 0;
       zSpeed = -zSpeed;
+      Console.WriteLine("Frente: " + pontoFrente);
+      Console.WriteLine("Fundo: " + pontoFundo);
+      Console.WriteLine("*****************************");
     }
 
+    // Movimenta paddle da frente
     private void MovePaddleFrente() {
       PaddleFrenteX += somaPaddleFrente;
       PaddleFrenteXLeft += somaPaddleFrente;
@@ -204,6 +207,7 @@ namespace gcgcg
       PaddleFrente.TranslacaoXYZ(somaPaddleFrente, 0, 0);
     }
 
+    // Movimenta paddle do fundo
     private void MovePaddleFundo() {
       PaddleFundoX += somaPaddleFundo;
       PaddleFundoXLeft += somaPaddleFundo;
